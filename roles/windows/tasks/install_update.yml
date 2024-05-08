@@ -1,5 +1,5 @@
 - name: Install all critical and security updates
-  become: true
+  #become: true
   win_updates:
     category_names: "{{ windows_update_category}}"
     accept_list: "{{ windows_update_whitelist }}"
