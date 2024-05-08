@@ -12,11 +12,13 @@
     windows_update_category: >-
       [
         {% set category=[] %}
+        {% set temp=[] %}
         {% for key, value in update_count['updates'].items() %}
         {% if 'categories' in value %}
         {% for item in value.categories %}
-        {% if item.strip() not in category and %}
+        {% if item not in temp %}
         {{ category.append(item.strip()) }}
+        {{ temp.append(item) }}
         {% endif %}
         {% endfor %}
         {% endif %}
