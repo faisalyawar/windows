@@ -1,0 +1,59 @@
+- name: Install all critical and security updates
+  win_updates:
+    category_names: "{{ windows_update_category }}"
+    state: installed
+    reboot: "{{ reboot }}"
+    reboot_timeout: "{{ reboot_timeout }}"
+  register: update_result
+
+# - name: Choose which Windows updates to install
+#   win_updates:
+#     category_names:
+#       - Application
+#       - Connectors
+#       - DefinitionUpdates
+#       - DeveloperKits
+#       - FeaturePacks
+#       - Guidance
+#       - ServicePacks
+#       - Tools
+#       - UpdateRollups
+#       - CriticalUpdates
+#       - SecurityUpdates
+#   register: updated_result
+
+# - name: Install specific updates based on the KBs for those updates
+#   win_updates:
+#     category_name: 
+#     - SecurityUpdates
+#     whitelist:
+#     - KB4073819
+#     - KB4074228
+
+# - name: Install all critical and security updates
+#   win_updates:
+#     category_names:
+#     - CriticalUpdates
+#     - SecurityUpdates
+#     - UpdateRollups
+#     state: installed
+#     reboot: "{{ reboot }}"
+#     reboot_timeout: "{{ reboot_timeout }}"
+#   register: update_result
+
+# - name: reboot host if required
+#   win_reboot:
+#   when: update_result.reboot_required
+
+# - name: Search-only, return list of updates found (if any), log to c:\ansible_wu.txt
+#   win_updates:
+#     category_names:
+#      -SecurityUpdates
+#      -CriticalUpdates
+#      -UpdateRollups
+#     state: searched
+#     log_path: c:\ansible_wu.
+  
+# - name: Custom module
+#   csv_file:
+#     windows_update_facts: "{{ update_result }}"
