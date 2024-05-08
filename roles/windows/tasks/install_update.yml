@@ -1,10 +1,17 @@
 - name: Install all critical and security updates
   win_updates:
-    category_names: "{{ windows_update_category }}"
+    category_names: "{{ windows_update_category}}"
+    whitelist: "{{ windows_update_whitelist }}"
     state: installed
     reboot: "{{ reboot }}"
     reboot_timeout: "{{ reboot_timeout }}"
+  loop: "{{ update_count.update }}"
+  when: update_count.found_update_count|int > 0
   register: update_result
+
+
+- debug:
+    msg: "{{ update_result }}"
 
 # - name: Choose which Windows updates to install
 #   win_updates:
