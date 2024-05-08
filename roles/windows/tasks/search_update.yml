@@ -1,3 +1,43 @@
 - name: Check for missing updates
   win_updates: state=searched
   register: update_count
+
+- name: Check found updates are available or not
+  ansible.builtin.fail:
+    msg: "No updates are available"
+  when: update_count.found_update_count|int == 0
+
+- name: set fact to all the updates
+  ansible.builtin.set_fact:
+    windows_update_category: >-
+      [
+        {% set category=[] %}
+        {% for key, value in update_count['updates'].items() %}
+        {% if 'categories' in value %}
+        {% for item in value.categories %}
+        {% if item not in category %}
+        {{ category.append(item) }}
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {{ category }}
+      ]
+    windows_update_whitelist: >-
+      [
+        {% set whitelist=[] %}
+        {% for key, value in update_count['updates'].items() %}
+        {% if 'kb' in value %}
+        {% for item in value.kb %}
+        {{ whitelist.append('KB'+item) }}
+        {% endfor %}
+        {% endif %}
+        {% endfor %}
+        {{ whitelist }}
+      ]
+
+- name: set stats for variables
+  set_stats:
+    data:
+      windows_update_category: "{{ windows_update_category[0] }}"
+      windows_update_whitelist: "{{ windows_update_whitelist[0] }}"
