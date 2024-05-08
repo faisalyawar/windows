@@ -1,0 +1,4 @@
+---
+
+reboot_timeout: 1800
+reboot: true

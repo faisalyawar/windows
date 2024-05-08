@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Windows updated and patching tasks
+      include_role:
+        name: windows
+      vars:
+        task_name: windows_patching
