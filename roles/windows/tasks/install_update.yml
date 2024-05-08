@@ -5,8 +5,6 @@
     state: installed
     reboot: "{{ reboot }}"
     reboot_timeout: "{{ reboot_timeout }}"
-  loop: "{{ update_count.update }}"
-  when: update_count.found_update_count|int > 0
   register: update_result
 
 
