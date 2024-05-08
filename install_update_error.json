@@ -1,0 +1,63 @@
+{
+    "changed": false,
+    "reboot_required": false,
+    "rebooted": false,
+    "elapsed": 0,
+    "unreachable": false,
+    "rc": 5,
+    "stdout": "",
+    "stderr": "Access is denied.(5)",
+    "msg": "Failed to reboot host: win_updates: Reboot command failed",
+    "exception": "Traceback (most recent call last):\n  File \"/usr/share/ansible/collections/ansible_collections/ansible/windows/plugins/plugin_utils/_reboot.py\", line 215, in reboot_host\n    _perform_reboot(task_action, connection, reboot_command)\n  File \"/usr/share/ansible/collections/ansible_collections/ansible/windows/plugins/plugin_utils/_reboot.py\", line 533, in _perform_reboot\n    raise _ReturnResultException(msg, rc=rc, stdout=stdout, stderr=stderr)\nansible_collections.ansible.windows.plugins.plugin_utils._reboot._ReturnResultException: win_updates: Reboot command failed\n",
+    "found_update_count": 2,
+    "failed_update_count": 0,
+    "installed_update_count": 0,
+    "updates": {
+      "20029fe7-5352-4455-9882-c372986717c7": {
+        "title": "2024-04 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5036896)",
+        "kb": [
+          "5036896"
+        ],
+        "categories": [
+          "Security Updates",
+          "Windows Server 2019"
+        ],
+        "id": "20029fe7-5352-4455-9882-c372986717c7",
+        "downloaded": false,
+        "installed": false
+      },
+      "8a9ba144-4d65-4534-8492-6e303a6e888c": {
+        "title": "2024-04 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5037034)",
+        "kb": [
+          "5037034"
+        ],
+        "categories": [
+          "Security Updates",
+          "Windows Server 2019"
+        ],
+        "id": "8a9ba144-4d65-4534-8492-6e303a6e888c",
+        "downloaded": false,
+        "installed": false
+      }
+    },
+    "filtered_updates": {},
+    "invocation": {
+      "module_args": {
+        "reject_list": null,
+        "category_names": [
+          "SecurityUpdates"
+        ],
+        "reboot_timeout": 1800,
+        "reboot": true,
+        "server_selection": "default",
+        "state": "installed",
+        "accept_list": [
+          "KB5037034",
+          "KB5036896"
+        ],
+        "skip_optional": false,
+        "log_path": null
+      }
+    },
+    "_ansible_no_log": false
+  }
