@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Install updates the windows machine
+      include_role:
+        name: windows
+      vars:
+        task_name: install_update
