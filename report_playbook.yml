@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Generate CSV file
+      include_role:
+        name: windows
+      vars:
+        task_name: generate_csv
