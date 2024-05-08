@@ -1,0 +1,58 @@
+{
+    "changed": false,
+    "reboot_required": false,
+    "rebooted": false,
+    "msg": "Installing updates: Exception from HRESULT: 0x80240016 - Operation tried to install while another installation was in progress or the system was pending a mandatory restart (WU_E_INSTALL_NOT_ALLOWED 0x80240016)",
+    "exception": "Exception from HRESULT: 0x80240016\r\nAt line:1496 char:21\r\n+                     throw $exp\r\n+                     ~~~~~~~~~~\r\n    + CategoryInfo          : OperationStopped: (:) [], COMException\r\n    + FullyQualifiedErrorId : Exception from HRESULT: 0x80240016\r\n \r\n\r\n\r\nat Invoke-AsyncMethod, <No file>: line 1496\r\nat Install-WindowsUpdate, <No file>: line 1906\r\nat <ScriptBlock>, <No file>: line 1989\r\nat Invoke-WithPipeOutput, <No file>: line 1005",
+    "found_update_count": 2,
+    "failed_update_count": 0,
+    "installed_update_count": 0,
+    "updates": {
+      "20029fe7-5352-4455-9882-c372986717c7": {
+        "title": "2024-04 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5036896)",
+        "kb": [
+          "5036896"
+        ],
+        "categories": [
+          "Security Updates",
+          "Windows Server 2019"
+        ],
+        "id": "20029fe7-5352-4455-9882-c372986717c7",
+        "downloaded": false,
+        "installed": false
+      },
+      "8a9ba144-4d65-4534-8492-6e303a6e888c": {
+        "title": "2024-04 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5037034)",
+        "kb": [
+          "5037034"
+        ],
+        "categories": [
+          "Security Updates",
+          "Windows Server 2019"
+        ],
+        "id": "8a9ba144-4d65-4534-8492-6e303a6e888c",
+        "downloaded": false,
+        "installed": false
+      }
+    },
+    "filtered_updates": {},
+    "invocation": {
+      "module_args": {
+        "reject_list": null,
+        "category_names": [
+          "SecurityUpdates"
+        ],
+        "reboot_timeout": 1200,
+        "reboot": false,
+        "server_selection": "default",
+        "state": "installed",
+        "accept_list": [
+          "KB5036896",
+          "KB5037034"
+        ],
+        "skip_optional": false,
+        "log_path": null
+      }
+    },
+    "_ansible_no_log": false
+  }
