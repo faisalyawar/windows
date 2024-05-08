@@ -17,7 +17,7 @@
         {% if 'categories' in value %}
         {% for item in value.categories %}
         {% if item not in temp %}
-        {{ category.append(item.strip()) }}
+        {{ category.append("".join(item.strip().split(" "))) }}
         {{ temp.append(item) }}
         {% endif %}
         {% endfor %}
