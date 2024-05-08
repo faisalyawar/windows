@@ -4,8 +4,8 @@
     category_names: "{{ windows_update_category}}"
     accept_list: "{{ windows_update_whitelist }}"
     state: installed
-    reboot: "{{ reboot }}"
-    reboot_timeout: "{{ reboot_timeout }}"
+    # reboot: "{{ reboot }}"
+    # reboot_timeout: "{{ reboot_timeout }}"
   register: update_result
 
 
