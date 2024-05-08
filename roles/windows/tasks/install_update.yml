@@ -1,7 +1,7 @@
 - name: Install all critical and security updates
   win_updates:
     category_names: "{{ windows_update_category}}"
-    whitelist: "{{ windows_update_whitelist }}"
+    # whitelist: "{{ windows_update_whitelist }}"
     state: installed
     reboot: "{{ reboot }}"
     reboot_timeout: "{{ reboot_timeout }}"
