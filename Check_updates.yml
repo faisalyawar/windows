@@ -1,8 +1,8 @@
 - hosts: all
   gather_facts: true
   tasks:
-    - name: Windows updated and patching tasks
+    - name: Check for updates to patch the windows machine
       include_role:
         name: windows
       vars:
-        task_name: windows_patching
+        task_name: search_update
