@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Check for updates to patch the windows machine
+      include_role:
+        name: windows
+      vars:
+        task_name: search_update
