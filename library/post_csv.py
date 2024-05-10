@@ -24,6 +24,7 @@ def generate_csv(module):
         for key, value in windows_update_facts.get('updates').items():
             if isinstance(value, dict):
                 temp_dict = {}
+                windows_facts_key.append('HOSTNAME')
                 for key1, value1 in value.items():                    
                     if isinstance(value1,list) and 'kb'==key:
                         temp_dict.update({key1: "KB"+ value1})
