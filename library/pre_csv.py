@@ -59,7 +59,7 @@ def generate_csv(module):
 def main():
     module = AnsibleModule(
         argument_spec=dict(
-            windows_before_update_facts=dict(required=True, type='dict'))
+            windows_before_update_facts=dict(required=True, type='dict'),
             windows_hostname=dict(required=True, type='str'))
     )
 
