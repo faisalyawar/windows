@@ -1,0 +1,23 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Gathering Facts] *********************************************************
+ok: [10.30.27.131]
+
+TASK [Install updates the windows machine] *************************************
+
+TASK [windows : install_update.yml] ********************************************
+included: /runner/project/roles/windows/tasks/install_update.yml for 10.30.27.131
+
+TASK [windows : Install all critical and security updates] *********************
+[WARNING]: Failed to cleanup running WinRM command, resources might still be in
+use on the target server
+[WARNING]: Unknown failure when polling update result - attempting to cancel
+task: Bad HTTP response returned from server. Code 400
+[WARNING]: Unknown failure when cancelling update task: Bad HTTP response
+returned from server. Code 400
+An exception occurred during task execution. To see the full traceback, use -vvv. The error was: winrm.exceptions.WinRMTransportError: Bad HTTP response returned from server. Code 400
+fatal: [10.30.27.131]: FAILED! => {"changed": false, "failed_update_count": 0, "filtered_updates": {}, "found_update_count": 0, "installed_update_count": 0, "msg": "Bad HTTP response returned from server. Code 400", "updates": {}}
+
+PLAY RECAP *********************************************************************
+10.30.27.131               : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
