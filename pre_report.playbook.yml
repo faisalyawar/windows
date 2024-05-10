@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Pre Report generation
+      include_role:
+        name: windows
+      vars:
+        task_name: pre_report
