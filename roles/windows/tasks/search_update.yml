@@ -4,7 +4,7 @@
 
 - name: Pre report creation
   pre_csv:
-    windows_before_update_facts: "{{ update_cunt }}"
+    windows_before_update_facts: "{{ update_count }}"
 
 - name: Check found updates are available or not
   ansible.builtin.fail:
