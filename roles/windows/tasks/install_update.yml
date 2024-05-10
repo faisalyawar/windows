@@ -13,6 +13,10 @@
 - debug:
     msg: "{{ update_result }}"
 
+- ansible.builtin.set_stats:
+    data:
+      windows_update_facts: "{{ update_result }}"
+
 # - name: Choose which Windows updates to install
 #   win_updates:
 #     category_names:
