@@ -2,10 +2,6 @@
   win_updates: state=searched
   register: update_count
 
-- name: Pre report creation
-  pre_csv:
-    windows_before_update_facts: "{{ update_count }}"
-
 - name: Check found updates are available or not
   ansible.builtin.fail:
     msg: "No updates are available"
@@ -45,5 +41,6 @@
 - name: set stats for variables
   set_stats:
     data:
+      windows_before_facts: "{{ update_count }}"
       windows_update_category: "{{ windows_update_category[0] }}"
       windows_update_whitelist: "{{ windows_update_whitelist[0] }}"
