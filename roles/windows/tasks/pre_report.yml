@@ -1,4 +1,4 @@
 - name: Pre report creation
   pre_csv:
     windows_before_update_facts: "{{ windows_before_facts }}"
-  
+    windows_hostname: "{{ windows_hostname }}"  
