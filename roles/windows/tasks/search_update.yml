@@ -9,7 +9,7 @@
 
 - name: Get the machine hostname
   set_fact:
-    windows_hostname: "{{ ansible_facts.ansible_hostname }}"
+    windows_hostname: "{{ ansible_hostname }}"
 
 - name: set fact to all the updates
   ansible.builtin.set_fact:
