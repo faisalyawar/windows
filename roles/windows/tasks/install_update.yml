@@ -4,6 +4,7 @@
     category_names: "{{ windows_update_category}}"
     accept_list: "{{ windows_update_whitelist }}"
     state: installed
+    log_path: C:\ansible_wu.txt
     # reboot: "{{ reboot }}"
     # reboot_timeout: "{{ reboot_timeout }}"
   register: update_result
