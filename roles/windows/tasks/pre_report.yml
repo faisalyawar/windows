@@ -1,0 +1,4 @@
+- name: Pre report creation
+  pre_csv:
+    windows_before_update_facts: "{{ update_count }}"
+  
