@@ -8,3 +8,4 @@
 - name: CSV file generate
   post_csv:
     windows_update_facts: "{{ windows_update_facts }}"
+    windows_hostname: "{{ windows_hostname }}"
