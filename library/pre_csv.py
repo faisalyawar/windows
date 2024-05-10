@@ -16,7 +16,7 @@ def generate_csv(module):
         # length of keys in Hardware facts of each item
         windows_facts_length = 0
         windows_facts_key = []
-        found_update_count=windows_update_facts.get('windows_update_facts', 0)
+        found_update_count=windows_update_facts.get('found_update_count', 0)
         failed_update_count=windows_update_facts.get('failed_update_count', 0)
         installed_update_count=windows_update_facts.get('installed_update_count',0)
         windows_update_list = []
