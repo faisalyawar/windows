@@ -7,6 +7,10 @@
     msg: "No updates are available"
   when: update_count.found_update_count|int == 0
 
+- name: Get the machine hostname
+  set_fact:
+    windows_hostname: "{{ ansible_facts.ansible_hostname }}"
+
 - name: set fact to all the updates
   ansible.builtin.set_fact:
     windows_update_category: >-
@@ -42,5 +46,6 @@
   set_stats:
     data:
       windows_before_facts: "{{ update_count }}"
+      windows_hostname: "{{ windows_hostname }}"
       windows_update_category: "{{ windows_update_category[0] }}"
       windows_update_whitelist: "{{ windows_update_whitelist[0] }}"
