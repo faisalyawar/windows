@@ -24,6 +24,7 @@ def generate_csv(module):
         for key, value in windows_before_update_facts.get('updates').items():
             if isinstance(value, dict):
                 pre_temp_dict = {}
+                windows_facts_key.append('HOSTNAME')
                 for before_key, before_value in value.items():   
                     if isinstance(before_value,list) and 'kb'==key:
                         pre_temp_dict.update({before_key.upper(): before_value})
@@ -34,6 +35,7 @@ def generate_csv(module):
                     
                     if before_key.upper() not in windows_facts_key:
                         windows_facts_key.append(before_key.upper())
+                
                 pre_temp_dict.update({'HOSTNAME': windows_hostname })
                 windows_update_list.append(pre_temp_dict)
 
