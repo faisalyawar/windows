@@ -7,6 +7,7 @@ from datetime import datetime
 def generate_csv(module):
     try:
         windows_update_facts = module.params['windows_update_facts']
+        windows_hostname = module.params['windows_hostname']
         result = dict()
         # Get the Today's day, month and year
         now = datetime.now()
@@ -33,7 +34,7 @@ def generate_csv(module):
                     
                     if key1 not in windows_facts_key:
                         windows_facts_key.append(key1)
-
+                temp_dict.update({'HOSTNAME': windows_hostname})
                 windows_update_list.append(temp_dict)
 
         result['windows_update'] = windows_update_list
@@ -57,6 +58,7 @@ def generate_csv(module):
 def main():
     module = AnsibleModule(
         argument_spec=dict(
+            windows_hostname=dict(required=True, type='str'))
             windows_update_facts=dict(required=True, type='dict'))
     )
 
