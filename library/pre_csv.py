@@ -7,6 +7,7 @@ from datetime import datetime
 def generate_csv(module):
     try:
         windows_before_update_facts = module.params['windows_before_update_facts']
+        windows_hostname = module.params['windows_hostname']
         result = dict()
         # Get the Today's day, month and year
         now = datetime.now()
