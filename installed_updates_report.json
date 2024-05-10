@@ -1,0 +1,43 @@
+{
+    "msg": {
+      "changed": true,
+      "reboot_required": true,
+      "rebooted": false,
+      "found_update_count": 2,
+      "failed_update_count": 0,
+      "installed_update_count": 2,
+      "updates": {
+        "20029fe7-5352-4455-9882-c372986717c7": {
+          "title": "2024-04 Cumulative Update for Windows Server 2019 for x64-based Systems (KB5036896)",
+          "kb": [
+            "5036896"
+          ],
+          "categories": [
+            "Security Updates",
+            "Windows Server 2019"
+          ],
+          "id": "20029fe7-5352-4455-9882-c372986717c7",
+          "downloaded": false,
+          "installed": true
+        },
+        "8a9ba144-4d65-4534-8492-6e303a6e888c": {
+          "title": "2024-04 Cumulative Update for .NET Framework 3.5, 4.7.2 and 4.8 for Windows Server 2019 for x64 (KB5037034)",
+          "kb": [
+            "5037034"
+          ],
+          "categories": [
+            "Security Updates",
+            "Windows Server 2019"
+          ],
+          "id": "8a9ba144-4d65-4534-8492-6e303a6e888c",
+          "downloaded": false,
+          "installed": true
+        }
+      },
+      "filtered_updates": {},
+      "failed": false
+    },
+    "_ansible_verbose_always": true,
+    "_ansible_no_log": false,
+    "changed": false
+  }
