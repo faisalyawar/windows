@@ -16,11 +16,11 @@ def generate_csv(module):
         # length of keys in Hardware facts of each item
         windows_facts_length = 0
         windows_facts_key = []
-        found_update_count=windows_update_facts.get('found_update_count', 0)
-        failed_update_count=windows_update_facts.get('failed_update_count', 0)
-        installed_update_count=windows_update_facts.get('installed_update_count',0)
+        found_update_count=windows_before_update_facts.get('found_update_count', 0)
+        failed_update_count=windows_before_update_facts.get('failed_update_count', 0)
+        installed_update_count=windows_before_update_facts.get('installed_update_count',0)
         windows_update_list = []
-        for key, value in windows_update_facts.get('updates').items():
+        for key, value in windows_before_update_facts.get('updates').items():
             if isinstance(value, dict):
                 pre_temp_dict = {}
                 for before_key, before_value in value.items():                    
