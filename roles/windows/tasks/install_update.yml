@@ -9,6 +9,9 @@
     # reboot_timeout: "{{ reboot_timeout }}"
   register: update_result
 
+- name: Trigger Windows Update check
+  win_shell: 'Invoke-WUJob -RunNow -Verbose'
+  become: yes
 
 - debug:
     msg: "{{ update_result }}"
