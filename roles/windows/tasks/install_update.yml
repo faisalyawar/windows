@@ -1,3 +1,8 @@
+- name: Check for pending reboots
+  win_shell: Get-WmiObject Win32_OperatingSystem | Select-Object -ExpandProperty 'RebootPending'
+  register: reboot_pending
+  ignore_errors: yes
+
 - name: Install all critical and security updates
   #become: true
   win_updates:
@@ -8,6 +13,8 @@
     # reboot: "{{ reboot }}"
     # reboot_timeout: "{{ reboot_timeout }}"
   register: update_result
+  async: 300
+  poll: 0
 
 - name: Trigger Windows Update check
   win_shell: 'Invoke-WUJob -RunNow -Verbose'
