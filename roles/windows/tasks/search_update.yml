@@ -1,4 +1,4 @@
-- name: Check for missing updates
+- name: Check for missing updates.
   win_updates: state=searched
   register: update_count
 
