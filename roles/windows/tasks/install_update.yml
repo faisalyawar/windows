@@ -18,7 +18,6 @@
 
 - name: Trigger Windows Update check
   win_shell: 'Invoke-WUJob -RunNow -Verbose'
-  become: yes
 
 - debug:
     msg: "{{ update_result }}"
