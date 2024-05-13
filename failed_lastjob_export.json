@@ -1,0 +1,19 @@
+{
+  "msg": "Traceback (most recent call last):\n  File \"/tmp/ansible_post_csv_payload_ft04khyx/ansible_post_csv_payload.zip/ansible/modules/post_csv.py\", line 24, in generate_csv\nAttributeError: 'NoneType' object has no attribute 'items'\n",
+  "invocation": {
+    "module_args": {
+      "windows_update_facts": {
+        "ansible_async_watchdog_pid": 5764,
+        "ansible_job_id": "j757535255184.7608",
+        "changed": false,
+        "failed": false,
+        "finished": 0,
+        "results_file": "C:\\Users\\LATFAI\\.ansible_async\\j757535255184.7608",
+        "started": 1
+      },
+      "windows_hostname": "Ansible-test-19"
+    }
+  },
+  "_ansible_no_log": false,
+  "changed": false
+}
