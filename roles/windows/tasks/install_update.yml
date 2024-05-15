@@ -4,22 +4,13 @@
 #   ignore_errors: yes
 
 - name: Install all critical and security updates
-  #become: true
   win_updates:
     category_names: "{{ windows_update_category}}"
-    accept_list: "{{ windows_update_whitelist }}"
+    accept_list: "{{ item }}"
     state: installed
   register: update_result
-  vars:
-    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=100
-
-# - name: Check on an async task
-#   async_status:
-#     jid: "{{ update_result.ansible_job_id }}"
-#   register: job_result
-#   until: job_result.finished
-#   retries: 100
-#   delay: 10
+  loop: "{{ windows_update_whitelist }}"
+  
 
 - name: Trigger Windows Update check
   win_shell: 'Invoke-WUJob -RunNow -Verbose'
