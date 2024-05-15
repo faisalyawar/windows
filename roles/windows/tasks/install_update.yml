@@ -9,10 +9,9 @@
     category_names: "{{ windows_update_category}}"
     accept_list: "{{ windows_update_whitelist }}"
     state: installed
-    reboot: true
   register: update_result
   vars:
-    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=30
+    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=100
 
 # - name: Check on an async task
 #   async_status:
