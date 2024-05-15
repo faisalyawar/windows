@@ -6,14 +6,12 @@
 - name: Install all critical and security updates
   win_updates:
     category_names: "{{ windows_update_category}}"
-    accept_list: "{{ item }}"
     state: installed
   register: update_result
-  loop: "{{ windows_update_whitelist }}"
   
-
-- name: Trigger Windows Update check
-  win_shell: 'Invoke-WUJob -RunNow -Verbose'
+- name: reboot host if required
+  win_reboot:
+  when: update_result.reboot_required
 
 - debug:
     msg: "{{ update_result }}"
