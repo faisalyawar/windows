@@ -9,10 +9,10 @@
     category_names: "{{ windows_update_category}}"
     accept_list: "{{ windows_update_whitelist }}"
     state: installed
-    log_path: C:\ansible_wu.txt
+    reboot: true
   register: update_result
-  async: 300
-  poll: 0
+  vars:
+    ansible_ssh_args: -o ControlMaster=no -o ServerAliveInterval=30
 
 # - name: Check on an async task
 #   async_status:
