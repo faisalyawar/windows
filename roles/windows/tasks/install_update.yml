@@ -16,11 +16,20 @@
   async: 300
   poll: 0
 
+- name: Check on an async task
+  async_status:
+    jid: "{{ update_result.ansible_job_id }}"
+  register: job_result
+  until: job_result.finished
+  retries: 100
+  delay: 10
+
 - name: Trigger Windows Update check
   win_shell: 'Invoke-WUJob -RunNow -Verbose'
 
 - debug:
     msg: "{{ update_result }}"
+
 
 - ansible.builtin.set_stats:
     data:
