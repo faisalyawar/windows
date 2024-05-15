@@ -1,7 +1,7 @@
-- name: Check for pending reboots
-  win_shell: Get-WmiObject Win32_OperatingSystem | Select-Object -ExpandProperty 'RebootPending'
-  register: reboot_pending
-  ignore_errors: yes
+# - name: Check for pending reboots
+#   win_shell: Get-WmiObject Win32_OperatingSystem | Select-Object -ExpandProperty 'RebootPending'
+#   register: reboot_pending
+#   ignore_errors: yes
 
 - name: Install all critical and security updates
   #become: true
