@@ -11,8 +11,8 @@
     state: installed
     log_path: C:\ansible_wu.txt
   register: update_result
-  # async: 300
-  # poll: 0
+  async: 300
+  poll: 0
 
 # - name: Check on an async task
 #   async_status:
