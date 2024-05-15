@@ -20,7 +20,7 @@
         {% for key, value in update_count['updates'].items() %}
         {% if 'categories' in value %}
         {% for item in value.categories %}
-        {% if item not in temp and "".join(item.strip().split(" ")) in ["SecurityUpdates", "CriticalUpdates", "UpdateRollups"] %}
+        {% if item not in temp and "".join(item.strip().split(" ")) in ["SecurityUpdates", "CriticalUpdates", "UpdateRollups", "Application", "Connectors", "DefinitionUpdates", "DeveloperKits", "FeaturePacks", "Guidance", "ServicePacks", "Tools"] %}
         {{ category.append("".join(item.strip().split(" "))) }}
         {{ temp.append(item) }}
         {% endif %}
