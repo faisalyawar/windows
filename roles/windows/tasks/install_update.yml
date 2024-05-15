@@ -28,12 +28,12 @@
   win_shell: 'Invoke-WUJob -RunNow -Verbose'
 
 - debug:
-    msg: "{{ update_result }}"
+    msg: "{{ job_result }}"
 
 
 - ansible.builtin.set_stats:
     data:
-      windows_update_facts: "{{ update_result }}"
+      windows_update_facts: "{{ job_result }}"
 
 # - name: Choose which Windows updates to install
 #   win_updates:
