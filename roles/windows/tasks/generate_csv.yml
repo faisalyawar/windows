@@ -1,11 +1,9 @@
-
-
 ---
 - name: Generate CSV file
   set_fact:
     windows_update_facts: "{{ windows_update_facts }}"
 
-- name: CSV file generate
+- name: CSV file generated
   post_csv:
     windows_update_facts: "{{ windows_update_facts }}"
     windows_hostname: "{{ windows_hostname }}"
