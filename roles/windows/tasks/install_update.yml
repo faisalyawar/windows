@@ -12,7 +12,12 @@
 - debug:
     msg: "{{ update_result }}"
 
-
+- name: Check security updates are install
+  win_shell: >
+    "Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser"
+    "Import-Module -Name PSWindowsUpdate"
+    "Get-WindowsUpdate"
+  
 - ansible.builtin.set_stats:
     data:
       windows_update_facts: "{{ update_result }}"
