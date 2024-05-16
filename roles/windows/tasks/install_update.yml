@@ -14,7 +14,7 @@
 
 - name: Check security updates are install
   win_shell: >
-    "Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser"
+    "Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser -Confirm:$false"
     "Import-Module -Name PSWindowsUpdate"
     "Get-WindowsUpdate"
   
