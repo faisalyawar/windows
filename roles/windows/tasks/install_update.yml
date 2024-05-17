@@ -12,6 +12,16 @@
 - debug:
     msg: "{{ update_result }}"
 
+
+- name: Install NuGet dependency
+  win_shell: "Install-PackageProvider -Name NuGet -Force nuget -Confirm:$false"
+
+
+
+- name: Install NuGet dependency
+  win_shell: "Install-Module -Name NuGet -Force"
+
+
 - name: Install dependency
   win_shell: "Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser -Confirm:$false"
 
