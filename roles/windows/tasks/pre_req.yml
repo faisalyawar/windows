@@ -1,0 +1,14 @@
+- name: Installing package NuGet dependency
+  win_shell: "Install-PackageProvider -Name NuGet -Force -Confirm:$false"
+
+- name: Install NuGet dependency
+  win_shell: "Install-Module -Name NuGet -Force"
+
+- name: Install dependency
+  win_shell: "Install-Module -Name PSWindowsUpdate -Force -Scope CurrentUser -Confirm:$false"
+
+- name: Import PS Windows update module
+  win_shell: "Import-Module -Name PSWindowsUpdate"
+
+- name: Check security updates are installed
+  win_shell: "Get-WindowsUpdate"
