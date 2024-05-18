@@ -1,0 +1,8 @@
+- hosts: all
+  gather_facts: true
+  tasks:
+    - name: Install pre-reqs on to the target windows machine
+      include_role:
+        name: windows
+      vars:
+        task_name: pre_req
